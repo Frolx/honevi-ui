@@ -49,7 +49,7 @@ export class OmboardigInitComponent implements OnInit {
         // this.roles = this.tokenStorage.getUser().roles;
         this.roles = this.tokenStorage.getToken() || "osdko"
         console.log("AUTH DONE " + token)
-        this._router.navigateByUrl('onboard/profile')
+        this._router.navigateByUrl('onboard/company/profile')
       },
       err => {
         console.log(err.error.message)

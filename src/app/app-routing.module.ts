@@ -8,13 +8,15 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
-import { OnboardCompanyComponent } from './onboard-company/onboard-company.component';
-import { OmboardigInitComponent } from './omboardig-init/omboardig-init.component';
-import { OnboardigProfileComponent } from './onboardig-profile/onboardig-profile.component';
-import { OnboardigReadyComponent } from './onboardig-ready/onboardig-ready.component';
+import { OnboardCompanyComponent } from './company-details/onboard-company.component';
+import { OmboardigInitComponent } from './company-onboard/omboardig-init.component';
+import { OnboardigProfileComponent } from './company-profile/onboardig-profile.component';
+import { OnboardigReadyComponent } from './company-ready/onboardig-ready.component';
+import { AuthGuardService as AuthGuard } from './_services/auth-guard.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
-const routes: Routes = [
-  { path: 'onboard', component: OnboardCompanyComponent},
+export const routes: Routes = [
+
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -22,9 +24,11 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: 'onboard/init', component: OmboardigInitComponent},
-  { path: 'onboard/profile', component: OnboardigProfileComponent},
-  { path: 'onboard/ready', component: OnboardigReadyComponent},
+  { path: 'onboard/company', component: OnboardCompanyComponent},
+  { path: 'onboard/company/init', component: OmboardigInitComponent},
+  { path: 'onboard/company/profile', component: OnboardigProfileComponent, canActivate: [AuthGuard]},
+  { path: 'onboard/company/ready', component: OnboardigReadyComponent, canActivate: [AuthGuard]},
+  { path: 'onboard/user', component: UserProfileComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

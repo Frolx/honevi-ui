@@ -36,7 +36,7 @@ export class OnboardigProfileComponent implements OnInit {
   onSubmit() {
     this.onboardingService.postSetCompanyProfile(this.form.name, this.form.cui, this.form.icon).subscribe(
       (data: HttpResponse<any>) => {
-        this._router.navigateByUrl('onboard/ready')
+        this._router.navigateByUrl('onboard/company/ready')
       },
       err => {
         console.log(err.error.message)

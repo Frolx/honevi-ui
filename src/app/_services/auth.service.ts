@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { TokenStorageService } from '../_services/token-storage.service';
+
 
 const AUTH_API = 'http://localhost:8080/';
 
@@ -9,11 +12,16 @@ const httpOptions = {
   observe: "response" as "body"
 };
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient) { }
+
+
+
+  constructor(private http: HttpClient, private tokenStorage: TokenStorageService) { }
 
   login(email: string, password: string): Observable<any> {
     return this.http.post(AUTH_API + 'login', {
@@ -29,4 +37,13 @@ export class AuthService {
       password
     }, httpOptions);
   }
+
+  public isAuthenticated(): boolean {
+    const jwtHelper = new JwtHelperService()
+    const token = this.tokenStorage.getToken()
+    // Check whether the token is expired and return
+    // true or false
+    return !jwtHelper.isTokenExpired(token);
+  }
+
 }

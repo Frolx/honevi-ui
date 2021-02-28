@@ -14,10 +14,18 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
-import { OnboardCompanyComponent } from './onboard-company/onboard-company.component';
-import { OmboardigInitComponent } from './omboardig-init/omboardig-init.component';
-import { OnboardigProfileComponent } from './onboardig-profile/onboardig-profile.component';
-import { OnboardigReadyComponent } from './onboardig-ready/onboardig-ready.component';
+import { OnboardCompanyComponent } from './company-details/onboard-company.component';
+import { OmboardigInitComponent } from './company-onboard/omboardig-init.component';
+import { OnboardigProfileComponent } from './company-profile/onboardig-profile.component';
+import { OnboardigReadyComponent } from './company-ready/onboardig-ready.component';
+import { AuthGuardService } from './_services/auth-guard.service';
+import { AuthService } from './_services/auth.service';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserReadyComponent } from './user-ready/user-ready.component';
+import { VendorOnboardComponent } from './vendor-onboard/vendor-onboard.component';
+import { VendorProfileComponent } from './vendor-profile/vendor-profile.component';
+import { VendorReadyComponent } from './vendor-ready/vendor-ready.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +40,13 @@ import { OnboardigReadyComponent } from './onboardig-ready/onboardig-ready.compo
     OnboardCompanyComponent,
     OmboardigInitComponent,
     OnboardigProfileComponent,
-    OnboardigReadyComponent
+    OnboardigReadyComponent,
+    UserDetailsComponent,
+    UserProfileComponent,
+    UserReadyComponent,
+    VendorOnboardComponent,
+    VendorProfileComponent,
+    VendorReadyComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +54,7 @@ import { OnboardigReadyComponent } from './onboardig-ready/onboardig-ready.compo
     FormsModule,
     HttpClientModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

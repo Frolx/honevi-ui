@@ -1,3 +1,4 @@
+import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 import { Injectable } from '@angular/core';
 
 const TOKEN_KEY = 'auth-token';
@@ -18,8 +19,12 @@ export class TokenStorageService {
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
 
-  public getToken(): string | null {
-    return window.sessionStorage.getItem(TOKEN_KEY);
+  public getToken(): string | "" {
+    let token = window.sessionStorage.getItem(TOKEN_KEY);
+    if (token == null) {
+      token = ""
+    }
+    return token;
   }
 
   public saveUser(user: any): void {
