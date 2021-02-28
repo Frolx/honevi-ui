@@ -1,0 +1,126 @@
+<main id="content" role="main" class="main pt-0">
+  <!-- Content -->
+  <div class="container-fluid px-3">
+    <div class="row">
+      <!-- Cover -->
+      <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center min-vh-lg-100 position-relative bg-light px-0">
+        <!-- Logo & Language -->
+        <div class="position-absolute top-0 left-0 right-0 mt-3 mx-3">
+          <div class="d-none d-lg-flex justify-content-between">
+            <a href="index.html">
+              <img class="w-100" src="./assets/static/svg/logos/logo.svg" alt="Image Description" style="min-width: 7rem; max-width: 7rem;">
+            </a>
+
+
+          </div>
+        </div>
+        <!-- End Logo & Language -->
+
+        <div style="max-width: 23rem;">
+          <!-- Step -->
+            <ul class="step">
+              <li class="step-item">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-soft-primary ">1</span>
+                  <div class="step-content">
+                    <h4>Security</h4>
+                    <p class="step-text">Set up your security settings.</p>
+                    <p> </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-primary">2</span>
+                  <div class="step-content">
+                    <h4>Company details</h4>
+                    <p class="step-text">Set up quickly your company</p>
+                    <p> </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="step-item">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-soft-primary last-step">3</span>
+                  <div class="step-content">
+                    <h4>Done!</h4>
+                    <p class="step-text">That's it!</p>
+                    <p> </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- End Step -->
+          <!-- End Row -->
+        </div>
+      </div>
+      <!-- End Cover -->
+
+      <div class="col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100">
+        <div class="w-100 pt-10 pt-lg-7 pb-7" style="max-width: 25rem;">
+          <!-- Form -->
+          <form id="setup-company"  class="js-validate" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+            <div class="text-center mb-5">
+              <h1 class="display-4">Set up your company</h1>
+              <p>Add details <a href="authentication-signin-cover.html">Need some help?</a></p>
+            </div>
+
+
+            <label class="input-label" for="fullNameSrEmail">Company name</label>
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+                  <input type="text" class="form-control form-control-lg"  [(ngModel)]="form.name" #name="ngModel" name="fullName" id="fullNameSrEmail" placeholder="Company name" aria-label="Mark" required data-msg="Please enter your first name.">
+             </div>
+            <!-- End Form Group -->
+
+            <label class="input-label" for="fullNameSrEmail">CIF</label>
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+                  <input type="text" class="form-control form-control-lg" #cui="ngModel" [(ngModel)]="form.cui" name="fullName" id="fullNameSrEmail" placeholder="CIF Number" aria-label="Mark" required data-msg="Please enter your first name.">
+             </div>
+            <!-- End Form Group -->
+
+
+            <label class="input-label" for="fullNameSrEmail">Add company logo</label>
+
+              <div class="d-flex align-items-center">
+                <!-- Avatar -->
+                <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="avatarUploader">
+                  <img id="avatarImg" class="avatar-img" src="./assets/static/img/160x160/img1.jpg" alt="Image Description">
+
+                  <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader" (change)="onSelectFile($event)"
+                         data-hs-file-attach-options='{
+                            "textTarget": "#avatarImg",
+                            "mode": "image",
+                            "targetAttr": "src",
+                            "resetTarget": ".js-file-attach-reset-img",
+                            "resetImg": "../assets/img/160x160/img1.jpg",
+                            "allowTypes": [".png", ".jpeg", ".jpg"]
+                         }'>
+
+                  <span class="avatar-uploader-trigger">
+                    <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
+                  </span>
+                </label>
+                <!-- End Avatar -->
+                <div style="display: block;">
+                <p>Upload your company logo (PNG, SVG, JPG)</p>
+                <p><label class="btn btn-white" for="avatarUploader">Upload</label></p>
+                </div>
+              </div>
+              <p><br></p>
+
+              <button type="submit" class="btn btn-lg btn-block btn-primary mb-2">Continue</button>
+
+
+          </form>
+          <!-- End Form -->
+        </div>
+      </div>
+    </div>
+    <!-- End Row -->
+  </div>
+  <!-- End Content -->
+</main>

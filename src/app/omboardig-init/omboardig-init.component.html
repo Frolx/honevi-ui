@@ -1,0 +1,141 @@
+<main id="content" role="main" class="main pt-0">
+  <!-- Content -->
+  <div class="container-fluid px-3">
+    <div class="row">
+      <!-- Cover -->
+      <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center min-vh-lg-100 position-relative bg-light px-0">
+        <!-- Logo & Language -->
+        <div class="position-absolute top-0 left-0 right-0 mt-3 mx-3">
+          <div class="d-none d-lg-flex justify-content-between">
+            <a href="index.html">
+              <img class="w-100" src="./assets/svg/logos/logo.svg" alt="Image Description" style="min-width: 7rem; max-width: 7rem;">
+            </a>
+
+
+          </div>
+        </div>
+        <!-- End Logo & Language -->
+
+        <div style="max-width: 23rem;">
+         <!-- Step -->
+          <ul class="step">
+            <li class="step-item">
+              <div class="step-content-wrapper">
+                <span class="step-icon step-icon-primary">1</span>
+                <div class="step-content">
+                  <h4>Security</h4>
+                  <p class="step-text">Set up your security settings.</p>
+                  <p> </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="step-item">
+              <div class="step-content-wrapper">
+                <span class="step-icon step-icon-soft-primary">2</span>
+                <div class="step-content">
+                  <h4>Company details</h4>
+                  <p class="step-text">Set up quickly your company</p>
+                  <p> </p>
+                </div>
+              </div>
+            </li>
+
+            <li class="step-item">
+              <div class="step-content-wrapper">
+                <span class="step-icon step-icon-soft-primary last-step">3</span>
+                <div class="step-content">
+                  <h4>Done!</h4>
+                  <p class="step-text">That's it!</p>
+                  <p> </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <!-- End Step -->
+          <!-- End Row -->
+        </div>
+      </div>
+
+
+      <!-- End Cover -->
+
+      <div class="col-lg-6 d-flex justify-content-center align-items-center min-vh-lg-100">
+        <div class="w-100 pt-10 pt-lg-7 pb-7" style="max-width: 25rem;">
+          <!-- Form -->
+          <form
+            class="js-validate"
+            id="activate-form"
+            name="form"
+            (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm" >
+            <div class="text-center mb-5">
+              <h1 class="display-4">Set up your account</h1>
+              <p>It takes less than 1 min <a href="authentication-signin-cover.html"> </a></p>
+            </div>
+
+
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+              <label class="input-label" for="signupSrEmail">Your email</label>
+
+              <input type="email" class="form-control form-control-lg" [(ngModel)]="form.email" #email="ngModel" name="email" id="signupSrEmail" placeholder="Markwilliams@example.com" required data-msg="Please enter a valid email address." [readonly]=true>
+
+            </div>
+            <!-- End Form Group -->
+
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+              <label class="input-label" for="signupSrPassword">Password</label>
+
+              <div class="input-group input-group-merge">
+                <input type="password" [(ngModel)]="form.password" #password="ngModel" class="js-toggle-password form-control form-control-lg" name="password" id="signupSrPassword" placeholder="8+ characters required" aria-label="8+ characters required" required
+                       data-msg="Your password is invalid. Please try again."
+                       data-hs-toggle-password-options='{
+                         "target": [".js-toggle-password-target-1", ".js-toggle-password-target-2"],
+                         "defaultClass": "tio-hidden-outlined",
+                         "showClass": "tio-visible-outlined",
+                         "classChangeTarget": ".js-toggle-passowrd-show-icon-1"
+                       }'>
+                <div class="js-toggle-password-target-1 input-group-append">
+                  <a class="input-group-text" href="javascript:;">
+                    <i class="js-toggle-passowrd-show-icon-1 tio-visible-outlined"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Form Group -->
+
+            <!-- Form Group -->
+            <div class="js-form-message form-group">
+              <label class="input-label" for="signupSrConfirmPassword">Confirm password</label>
+
+              <div class="input-group input-group-merge">
+                <input type="password" [(ngModel)]="form.rpassword" #rpassword="ngModel"class="js-toggle-password form-control form-control-lg"  name="confirmPassword" id="signupSrConfirmPassword" placeholder="8+ characters required" aria-label="8+ characters required" required
+                       data-msg="Password does not match the confirm password."
+                       data-hs-toggle-password-options='{
+                         "target": [".js-toggle-password-target-1", ".js-toggle-password-target-2"],
+                         "defaultClass": "tio-hidden-outlined",
+                         "showClass": "tio-visible-outlined",
+                         "classChangeTarget": ".js-toggle-passowrd-show-icon-2"
+                       }'>
+                <div class="js-toggle-password-target-2 input-group-append">
+                  <a class="input-group-text" href="javascript:;">
+                    <i class="js-toggle-passowrd-show-icon-2 tio-visible-outlined"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Form Group -->
+
+            <button type="submit" class="btn btn-lg btn-block btn-primary mb-2">Continue</button>
+
+          </form>
+          <!-- End Form -->
+        </div>
+      </div>
+    </div>
+    <!-- End Row -->
+  </div>
+  <!-- End Content -->
+</main>
