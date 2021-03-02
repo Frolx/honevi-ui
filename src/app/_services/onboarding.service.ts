@@ -24,4 +24,12 @@ export class OnboardingService {
   postSetCompanyProfile(name: string, cui: string, icon: string): Observable<any> {
     return this.http.post(API_URL + '/benefit/onboard/company/setup', {name, cui, icon}, httpOptions);
   }
+
+  postActivateUser(email: string, password: string): Observable<any> {
+    return this.http.post(API_URL + '/benefit/onboard/activate', {email, password}, httpOptions);
+  }
+
+  postSetUserProfile(name: string, lastname: string, icon: string): Observable<any> {
+    return this.http.post(API_URL + '/benefit/onboard/set-profile', {name, lastname, icon}, httpOptions);
+  }
 }

@@ -5,11 +5,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TokenStorageService } from '../_services/token-storage.service';
 
 @Component({
-  selector: 'app-omboardig-init',
-  templateUrl: './omboardig-init.component.html',
-  styleUrls: ['./omboardig-init.component.css']
+  selector: 'app-onboardig-init',
+  templateUrl: './onboardig-init.component.html',
+  styleUrls: ['./onboardig-init.component.css']
 })
-export class OmboardigInitComponent implements OnInit {
+export class OnboardigInitComponent implements OnInit {
   form: any = {
     password: null,
     rpassword: null,

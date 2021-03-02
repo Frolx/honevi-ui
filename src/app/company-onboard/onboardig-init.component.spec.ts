@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OmboardigInitComponent } from './omboardig-init.component';
+import { OnboardigInitComponent } from './onboardig-init.component';
 
 describe('OmboardigInitComponent', () => {
-  let component: OmboardigInitComponent;
-  let fixture: ComponentFixture<OmboardigInitComponent>;
+  let component: OnboardigInitComponent;
+  let fixture: ComponentFixture<OnboardigInitComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OmboardigInitComponent ]
+      declarations: [ OnboardigInitComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OmboardigInitComponent);
+    fixture = TestBed.createComponent(OnboardigInitComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

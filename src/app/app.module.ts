@@ -15,7 +15,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { OnboardCompanyComponent } from './company-details/onboard-company.component';
-import { OmboardigInitComponent } from './company-onboard/omboardig-init.component';
+import { OnboardigInitComponent } from './company-onboard/onboardig-init.component';
 import { OnboardigProfileComponent } from './company-profile/onboardig-profile.component';
 import { OnboardigReadyComponent } from './company-ready/onboardig-ready.component';
 import { AuthGuardService } from './_services/auth-guard.service';
@@ -38,7 +38,7 @@ import { VendorReadyComponent } from './vendor-ready/vendor-ready.component';
     BoardModeratorComponent,
     BoardUserComponent,
     OnboardCompanyComponent,
-    OmboardigInitComponent,
+    OnboardigInitComponent,
     OnboardigProfileComponent,
     OnboardigReadyComponent,
     UserDetailsComponent,
